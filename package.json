@@ -3,9 +3,9 @@
   "name": "restapi",
   "version": "1.0.0",
   "description": "Simple REST API with Express and MongoDB",
-  "main": "app.js",
+  "main": "server.js",
   "scripts": {
-    "start": "node app.js"
+    "start": "node server.js"
   },
   "dependencies": {
     "cors": "^2.8.5",
