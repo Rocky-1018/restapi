@@ -8,7 +8,6 @@ app.use(cors());
 app.use(express.json());
 
 // --- MongoDB Cloud Connection (MongoDB Atlas) ---
-// ⚠️ Replace this with your actual MongoDB connection string!
 const MONGO_URI = "mongodb+srv://prashanth:admin@cluster0.un4kgqq.mongodb.net/UserList";
 
 
@@ -86,7 +85,7 @@ app.put("/api/users/modify/:id", async (req, res) => {
   }
 });
 
-// 5️⃣ DELETE /api/users/delete/:id → Delete user by ID
+//  DELETE /api/users/delete/:id → Delete user by ID
 app.delete("/user/delete/:id", async (req, res) => {
   try {
     const user = await User.findOneAndDelete({ id: req.params.id });
@@ -97,7 +96,7 @@ app.delete("/user/delete/:id", async (req, res) => {
   }
 });
 
-// 6️⃣ (Optional) GET /api/users/getrandomuser → Get one random user
+// (Optional) GET /api/users/getrandomuser → Get one random user
 app.get("/api/users/getrandomuser", async (req, res) => {
   try {
     const count = await User.countDocuments();
@@ -111,3 +110,4 @@ app.get("/api/users/getrandomuser", async (req, res) => {
 
 // --- Start Server ---
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+
